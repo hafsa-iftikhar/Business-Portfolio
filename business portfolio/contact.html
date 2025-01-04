@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <title>Contact Us - Brand Curb</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Baloo 2', cursive;
+    }
+
+    /* Body and Typography */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header Styles */
+    .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(124, 133, 141, 0.85); /* Semi-transparent background */
+  border-bottom: 2px solid rgba(6, 82, 141, 0.85); /* Semi-transparent border */
+  box-shadow: 0 2px 5px rgba(6, 4, 4, 0.1);
+  z-index: 1000;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+}
+
+.header-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Keeps the image proportional */
+  }
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 15px; /* Space between links */
+  flex-wrap: nowrap; /* Ensure links stay horizontal */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1c1c1c;
+  padding: 10px 15px;
+  font-weight: normal;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: rgb(193, 200, 208);
+}
+
+.cta {
+  background: rgb(5, 40, 102);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta:hover {
+  background: rgb(36, 40, 47);
+} 
+    /* Contact Section */
+    h2 {
+      margin-bottom: 15px;
+      font-size: 28px;
+      color: #007bff;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007bff;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #0056b3;
+    }
+
+    /* Fix Header Overlap */
+    body::before {
+      content: "";
+      display: block;
+      height: 80px;
+    }
+
+    /* Center the Contact Section */
+    .contact-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-card {
+  flex: 1;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.contact-item i {
+  font-size: 24px;
+  color: #007bff;
+  margin-right: 15px;
+}
+
+.contact-item h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.contact-item p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.map-container {
+  flex: 2;
+  margin-left: 20px;
+  min-width: 300px;
+}
+
+iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 10px;
+}
+
+
+    /* Info Section */
+    .info-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .info-box {
+      flex: 1;
+      max-width: 220px;
+      margin: 15px;
+      text-align: center;
+    }
+
+    .info-box i {
+      font-size: 24px;
+      color: #04366c;
+      margin-bottom: 10px;
+    }
+
+    .info-box p {
+      margin: 5px 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* Social Media Section */
+    .social-media-links {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      padding: 10px 0;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .social-media-links a {
+      margin: 0 15px;
+      font-size: 24px;
+      color: #043161;
+      transition: color 0.3s;
+    }
+
+    .social-media-links a:hover {
+      color: #54708f;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+
+      .contact-form {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .info-box {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-box">
+      <div class="logo">
+        <img src="IC.png" alt="Brand Logo" class="logo-img">
+      </div>
+      <nav class="nav">
+        <ul class="nav-links">
+            <li><a href="header.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="catalogue.html">Catalogue</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="cta" id="scheduleMeetingBtn">Schedule a Meeting</button>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <!-- Contact Details Card -->
+      <div class="contact-card">
+        <div class="contact-item">
+          <i class="icon-location"></i>
+          <div>
+            <h4>Location</h4>
+            <p>198 West 21th Street, Suite 721<br>New York NY 10016</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="icon-phone"></i>
+          <div>
+            <h4>Phone</h4>
+            <p>+1235 2355 98</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="icon-hours"></i>
+          <div>
+            <h4>Hours</h4>
+            <p>Mon-Fri: 9am - 5pm</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Map Section -->
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24149.64349289656!2d-74.0059415!3d40.7127753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a31627301df%3A0xb72f7c8dd82e146f!2sNew+York!5e0!3m2!1sen!2sus!4v1601234567890!5m2!1sen!2sus" 
+          width="100%" 
+          height="400" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media Section -->
+  <div class="social-media-links">
+    <a href="https://www.facebook.com/YourPage" target="_blank" class="social-icon">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/ic_textile/" target="_blank" class="social-icon">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://wa.me/+923369387999" target="_blank" class="social-icon">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <script>
+    async function sendEmail(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  // Collect form data
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+
+  // Create data object to send
+  const data = {
+    name: name,
+    email: email,
+    subject: subject,
+    message: message,
+  };
+
+  try {
+    // Send POST request to backend
+    const response = await fetch("http://localhost:3000/send-mail", { // Backend URL
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(data),
+});
+
+    if (response.ok) {
+      alert("Message sent successfully!");
+    } else {
+      alert("Failed to send message.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("An error occurred. Please try again later.");
+  }
+}
+  </script>
+  
+  
+</body>
+</html>
