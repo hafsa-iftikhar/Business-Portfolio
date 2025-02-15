@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; URL='./header.html'" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0; URL='header.html'" />
     <title>Redirecting...</title>
 </head>
 <body>
-    <p>If you are not redirected automatically, <a href="./header.html">click here</a>.</p>
+    <p>If you are not redirected automatically, <a href="header.html">click here</a>.</p>
+
+    <script>
+        // JavaScript fallback for browsers that don't support meta refresh
+        setTimeout(function() {
+            window.location.href = "header.html";
+        }, 0);
+    </script>
 </body>
 </html>
